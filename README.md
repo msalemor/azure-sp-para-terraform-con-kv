@@ -9,11 +9,10 @@ LOCATION="EAST US"
 KV_NAME=ContosoKeyVault
 
 ## Generar el SP que puedo actuar a nive del subscripcion
-## az ad sp create-for-rbac –name "sp-demo" –role "Contributor" –scope "/subscriptions/$(SubscriptionID)"
-
+#az ad sp create-for-rbac --name "my-sp-name" --role contributor --scopes /subscriptions/${SubscriptionID}
 
 ## Generar un group de recursos
-az group create -n $RG_NAME" -l $LOCATION
+az group create -n $RG_NAME -l $LOCATION
 
 ## Generar un KV en el grupo de recursos
 az keyvault create --name $KV_NAME --resource-group $RG_NAME --location $LOCATION

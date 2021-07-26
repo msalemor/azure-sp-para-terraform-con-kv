@@ -21,7 +21,7 @@ az keyvault secret set --vault-name $KV_NAME --name "SQLPassword" --value "hVFkk
 #az ad sp create-for-rbac --name "my-sp-name" --role contributor --scopes /subscriptions/${SubscriptionID}
 
 ## Autorizar al SP a obtener los secretos de KV
-az keyvault set-policy --name $KV_NAME --spn $SPN --secret-permissions get
+#az keyvault set-policy --name $KV_NAME --spn $SPN --secret-permissions get
 ```
 
 ## Leer un secreto

@@ -24,6 +24,14 @@ az keyvault secret set --vault-name $KV_NAME --name "SQLPassword" --value "hVFkk
 az keyvault set-policy --name $KV_NAME --spn $SPN --secret-permissions get
 ```
 
+## Leer un secreto
+
+```bash
+KV_NAME=ContosoKeyVault
+az login --service-principal -u <SPN> -p <PASSWORD> --tenant <TENANTID>
+az keyvault secret show --name "SQLPassword" --vault-name $KV_NAME --query "value"
+```
+
 ## Documentos de referencia
 
 - https://docs.microsoft.com/en-us/azure/key-vault/general/manage-with-cli2
